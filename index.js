@@ -13,7 +13,7 @@ let stroagedata = []
 
 const getfiltereddata = async (somedata,did) => {
     return somedata.filter((i)=>{
-        if(i.to !== did ){
+        if(i.to !== did,i.tokenSymbol === "BKTC"  ){
             return i
         }
     })
@@ -46,5 +46,3 @@ async function runapp() {
 }
 
 runapp()
-
-
