@@ -12,8 +12,8 @@ let stroagedata = []
 
 
 const getfiltereddata = async (somedata,did) => {
-    return somedata.filter((i,k)=>{
-        if(i.to !== did){
+    return somedata.filter((i)=>{
+        if(i.to !== did ){
             return i
         }
     })
@@ -32,13 +32,13 @@ async function app (did) {
     stroagedata = [...stroagedata,did]
     await filtereddata.map( async (i,x)=>{
         // console.log(stroagedata.includes(i))
-
         return await  setTimeout( async() => {
             return await app(i.to)
         }, 1000*x); 
     })
 }
 
+// ทำไม่ทันแล้วครับ 5555
 
 async function runapp() {
     await app(id)
